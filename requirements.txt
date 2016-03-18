@@ -1,1 +1,2 @@
-roku>=2.0
+roku
+nose
