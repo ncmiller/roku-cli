@@ -1,5 +1,6 @@
 from roku import Roku
 
+
 def discover_roku():
     """ Search LAN for available Roku devices. Returns a Roku object. """
 
@@ -7,12 +8,12 @@ def discover_roku():
     rokus = Roku.discover()
     if not rokus:
         print("Unable to discover Roku devices. " +
-                "Try again, or manually specify the IP address with " +
-                "\'roku <ipaddr>\' (e.g. roku 192.168.1.130)")
+              "Try again, or manually specify the IP address with " +
+              "\'roku <ipaddr>\' (e.g. roku 192.168.1.130)")
         return None
 
     print("Found the following Roku devices:")
-    for i,r in enumerate(rokus):
+    for i, r in enumerate(rokus):
         print("[" + str(i+1) + "]   " + str(r.host) + ":" + str(r.port))
     print("")
 
@@ -34,4 +35,3 @@ def discover_roku():
                 print("Invalid selection")
 
         return rokus[sel]
-

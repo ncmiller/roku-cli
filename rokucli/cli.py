@@ -2,6 +2,7 @@ import argparse
 from roku import Roku
 from discover import discover_roku
 
+
 class RokuCLI():
     """ Command-line interpreter for processing user input and relaying
     commands to Roku """
@@ -15,7 +16,7 @@ class RokuCLI():
                 'ipaddr',
                 nargs='?',
                 help=('IP address of Roku to connect to. By default, will ' +
-                    'automatically detect Roku within LAN.'))
+                      'automatically detect Roku within LAN.'))
         return parser.parse_args()
 
     def run(self):

@@ -21,6 +21,7 @@ setup(
     packages=find_packages(),
     install_requires=[
         'roku',
+        'blessed',
     ],
     license='MIT',
     platforms=["any"],
