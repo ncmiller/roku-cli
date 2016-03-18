@@ -36,7 +36,7 @@ setup(
     keywords='roku cli',
     entry_points={
         'console_scripts': [
-            'roku=rokucli:main',
+            'roku=rokucli.cli:main',
         ],
     },
 )

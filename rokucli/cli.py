@@ -1,2 +1,2 @@
-def roku_main():
+def main():
    print("Roku main")
