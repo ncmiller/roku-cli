@@ -41,7 +41,8 @@ Installation
 
     pip install rokucli
 
-Supported with Python 2 and 3 on Linux and Mac OS (sorry Windows users).
+Supported with Python 2 and 3 on Linux and Mac OS. Also works with Cygwin on
+Windows. Sorry, no native Windows support.
 
 Usage
 -------
