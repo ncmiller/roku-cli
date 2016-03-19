@@ -133,3 +133,6 @@ class RokuCLI():
 
 def main():
     RokuCLI().run()
+
+if __name__ == '__main__':
+    main()
