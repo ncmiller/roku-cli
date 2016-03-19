@@ -7,7 +7,7 @@ Interactively control your Roku device from the command-line with vim-style key 
     :target: https://travis-ci.org/ncmiller/roku-cli
 
 Who needs this?
-------
+--------------------
 
 This was made for lazy people who live on the command line.
 
@@ -19,12 +19,13 @@ table. I can't be expected to stop what I'm doing, put my laptop down, use
 the remote, sit back down, and resituate myself with my laptop. There has to be
 a better way...
 
-Luckily, `python-roku https://github.com/jcarbaugh/python-roku`_ exists,
+Luckily, `python-roku <https://github.com/jcarbaugh/python-roku>`_ exists,
 which makes it easy to control my Roku with
 Python. Add a simple interactive CLI, and now I'm Roku-ing in style without
 ever leaving the terminal.
 
 There are a few practical advantages of roku-cli vs. the remote:
+
 * Responsiveness - Moving around the Roku has never been faster
 * Easy text entry - No more hunting around the on-screen keyboard with
   the arrow keys
@@ -37,6 +38,7 @@ Installation
 ------------
 
 ::
+
     pip install rokucli
 
 Supported with Python 2 and 3 on Linux and Mac OS (sorry Windows users).
@@ -44,17 +46,15 @@ Supported with Python 2 and 3 on Linux and Mac OS (sorry Windows users).
 Usage
 -------
 
-To launch the CLI:
+To launch the CLI::
 
-::
     $ roku
 
 With no arguments, Rokus within the LAN will be discovered using `SSDP
-http://en.wikipedia.org/wiki/Simple_Service_Discovery_Protocol`_.
+<http://en.wikipedia.org/wiki/Simple_Service_Discovery_Protocol>`_.
 If only one Roku is found, then it will be selected, otherwise you'll be
-asked to select one:
+asked to select one::
 
-::
     Found the following Roku devices:
     [1]   192.168.1.118:8060
     [2]   192.168.1.130:8060
@@ -63,17 +63,15 @@ asked to select one:
     Select (1 to 2) >
 
 Alternatively, if you already know the IP address of your Roku, then launch the
-CLI with the IP as the first argument:
+CLI with the IP as the first argument::
 
-::
     $ roku 192.168.1.118
 
 This method is much faster than SSDP.
 
 From there, you'll be in interactive mode, and you can input keys to control
-your Roku:
+your Roku::
 
-::
     +-------------------------------+-------------------------+
     | Back           B or <Backsp>  | Replay          R       |
     | Home           H              | Info/Settings   i       |
