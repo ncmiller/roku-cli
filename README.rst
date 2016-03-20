@@ -41,6 +41,12 @@ Installation
 
     pip install rokucli
 
+Or to install the latest source::
+
+   git clone https://github.com/ncmiller/roku-cli.git
+   cd roku-cli
+   python setup.py install
+
 Supported with Python 2 and 3 on Linux and Mac OS. Also works with Cygwin on
 Windows. Sorry, no native Windows support.
 
