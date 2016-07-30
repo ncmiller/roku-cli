@@ -1,7 +1,7 @@
 import sys
 import argparse
 from roku import Roku
-from discover import discover_roku
+from rokucli.discover import discover_roku
 from blessed import Terminal
 
 
