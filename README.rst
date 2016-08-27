@@ -63,8 +63,8 @@ If only one Roku is found, then it will be selected, otherwise you'll be
 asked to select one::
 
     Found the following Roku devices:
-    [1]   192.168.1.118:8060
-    [2]   192.168.1.130:8060
+    [1]   192.168.1.116:8060 (Roku 3-4230X SW v7.2.0.4100)
+    [2]   192.168.1.147:8060 (Roku 3-4200X SW v7.2.0.4100)
 
     Multiple Rokus found. Select the index of the Roku to control:
     Select (1 to 2) >
