@@ -1,4 +1,5 @@
 from roku import Roku
+import re
 
 
 def discover_roku():
@@ -14,7 +15,9 @@ def discover_roku():
 
     print("Found the following Roku devices:")
     for i, r in enumerate(rokus):
-        print("[" + str(i+1) + "]   " + str(r.host) + ":" + str(r.port))
+        dinfo = ' '.join(re.split(', |: ', str(r.device_info))[1:3])
+        print("[" + str(i+1) + "]   " + str(r.host) + ":" +
+              str(r.port) + ' (' + dinfo + ')')
     print("")
 
     if len(rokus) == 1:
