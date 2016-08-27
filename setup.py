@@ -24,7 +24,7 @@ setup(
         'blessed',
     ],
     dependency_links=[
-        'https://github.com/jcarbaugh/python-roku/tarball/master#egg=roku-2.0'
+        'https://github.com/jcarbaugh/python-roku.git#egg=roku'
     ],
     license='MIT',
     platforms=["any"],
