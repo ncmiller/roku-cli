@@ -28,9 +28,15 @@ def discover_roku():
         print("Multiple Rokus found. Select the index of the Roku to control:")
 
         while True:
+            # Python 2.x/3.x compatibility
+            try:
+                input = raw_input
+            except NameError:
+                pass
+
             try:
                 query = "Select (1 to " + str(len(rokus)) + ") > "
-                sel = int(raw_input(query)) - 1
+                sel = int(input(query)) - 1
                 if sel >= len(rokus):
                     raise ValueError
                 else:
