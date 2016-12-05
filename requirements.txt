@@ -1,3 +1,3 @@
--e git+https://github.com/jcarbaugh/python-roku.git#egg=roku
+-e git+https://github.com/jcarbaugh/python-roku.git@cb4f5b376a925b638d36b3055e7360418c2a317a#egg=pythonroku
 blessed
 nose
