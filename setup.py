@@ -20,11 +20,8 @@ setup(
     url='https://github.com/ncmiller/roku-cli',
     packages=find_packages(),
     install_requires=[
-        'roku==2.0-dev',
+        'roku',
         'blessed',
-    ],
-    dependency_links=[
-        'git+https://github.com/jcarbaugh/python-roku.git@cb4f5b376a925b638d36b3055e7360418c2a317a#egg=roku-2.0-dev',
     ],
     license='MIT',
     platforms=["any"],
