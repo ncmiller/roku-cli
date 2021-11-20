@@ -12,15 +12,15 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
 
 setup(
     name='rokucli',
-    version='1.0.4',
+    version='1.0.5',
     description='Command-line control of your Roku device',
     long_description=long_description,
     author='Nick Miller',
-    author_email='ncmiller@openmailbox.org',
+    author_email='nick.miller.83@gmail.com',
     url='https://github.com/ncmiller/roku-cli',
     packages=find_packages(),
     install_requires=[
-        'roku',
+        'roku>=3.0',
         'blessed',
         'future',
     ],
