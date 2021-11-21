@@ -16,10 +16,11 @@ def discover_roku():
 
     print("Found the following Roku devices:")
     for i, r in enumerate(rokus):
-        # dinfo = ' '.join(re.split(', |: ', str(r.device_info))[1:3])
-        dinfo = ''
-        print("[" + str(i+1) + "]   " + str(r.host) + ":" +
-              str(r.port) + ' (' + dinfo + ')')
+        dinfo = ' '.join(re.split(', |: ', str(r.device_info))[1:3])
+        print(
+            "[" + str(i+1) + "]   " +
+            str(r.host) + ":" + str(r.port) +
+            ' (' + dinfo + ' (' + r.device_info.roku_type + '))')
     print("")
 
     if len(rokus) == 1:

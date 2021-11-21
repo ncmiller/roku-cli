@@ -5,15 +5,29 @@ from rokucli.discover import discover_roku
 from blessed import Terminal
 
 
-usage_menu = (
+default_usage_menu = (
         "  +-------------------------------+-------------------------+\n"
-        "  | Back           B or <Backsp>  | Replay          R       |\n"
+        "  | Back           B or <Esc>     | Replay          R       |\n"
         "  | Home           H              | Info/Settings   i       |\n"
         "  | Left           h or <Left>    | Rewind          r       |\n"
         "  | Down           j or <Down>    | Fast-Fwd        f       |\n"
         "  | Up             k or <Up>      | Play/Pause      <Space> |\n"
         "  | Right          l or <Right>   | Enter Text      /       |\n"
         "  | Ok/Enter       <Enter>        |                         |\n"
+        "  +-------------------------------+-------------------------+\n"
+        "   (press q to exit)\n")
+
+tv_usage_menu = (
+        "  +-------------------------------+-------------------------+\n"
+        "  | Back           B or <Esc>     | Replay          R       |\n"
+        "  | Home           H              | Info/Settings   i       |\n"
+        "  | Left           h or <Left>    | Rewind          r       |\n"
+        "  | Down           j or <Down>    | Fast-Fwd        f       |\n"
+        "  | Up             k or <Up>      | Play/Pause      <Space> |\n"
+        "  | Right          l or <Right>   | Enter Text      /       |\n"
+        "  | Ok/Enter       <Enter>        | Volume Up       V       |\n"
+        "  |                               | Volume Down     v       |\n"
+        "  |                               | Volume Mute     M       |\n"
         "  +-------------------------------+-------------------------+\n"
         "   (press q to exit)\n")
 
@@ -39,7 +53,12 @@ class RokuCLI():
         """ Relay literal text entry from user to Roku until
         <Enter> or <Esc> pressed. """
 
-        allowed_sequences = set(['KEY_ENTER', 'KEY_ESCAPE', 'KEY_DELETE'])
+        allowed_sequences = set([
+            'KEY_ENTER',
+            'KEY_ESCAPE',
+            'KEY_DELETE',
+            'KEY_BACKSPACE',
+        ])
 
         sys.stdout.write('Enter text (<Esc> to abort) : ')
         sys.stdout.flush()
@@ -63,7 +82,7 @@ class RokuCLI():
                     self.roku.enter()
                 elif val == 'KEY_ESCAPE':
                     pass
-                elif val == 'KEY_DELETE':
+                elif val == 'KEY_DELETE' or val == 'KEY_BACKSPACE':
                     self.roku.backspace()
                     if cur_column > start_column:
                         sys.stdout.write(u'\b \b')
@@ -91,11 +110,17 @@ class RokuCLI():
         if not self.roku:
             return
 
-        print(usage_menu)
+        print(self.roku.device_info)
+        is_tv = (self.roku.device_info.roku_type == "TV")
+
+        if is_tv:
+            print(tv_usage_menu)
+        else:
+            print(default_usage_menu)
 
         cmd_func_map = {
             'B':          self.roku.back,
-            'KEY_DELETE': self.roku.back,
+            'KEY_ESCAPE': self.roku.back,
             'H':          self.roku.home,
             'h':          self.roku.left,
             'KEY_LEFT':   self.roku.left,
@@ -112,6 +137,11 @@ class RokuCLI():
             'f':          self.roku.forward,
             ' ':          self.roku.play,
             '/':          self.text_entry}
+
+        if is_tv:
+            cmd_func_map['V'] = self.roku.volume_up
+            cmd_func_map['v'] = self.roku.volume_down
+            cmd_func_map['M'] = self.roku.volume_mute
 
         # Main interactive loop
         with self.term.cbreak():
