@@ -19,14 +19,14 @@ default_usage_menu = (
 
 tv_usage_menu = (
         "  +-------------------------------+-------------------------+\n"
-        "  | Back           B or <Esc>     | Replay          R       |\n"
-        "  | Home           H              | Info/Settings   i       |\n"
-        "  | Left           h or <Left>    | Rewind          r       |\n"
-        "  | Down           j or <Down>    | Fast-Fwd        f       |\n"
-        "  | Up             k or <Up>      | Play/Pause      <Space> |\n"
-        "  | Right          l or <Right>   | Enter Text      /       |\n"
-        "  | Ok/Enter       <Enter>        | Volume Up       V       |\n"
-        "  |                               | Volume Down     v       |\n"
+        "  | Power          p              | Replay          R       |\n"
+        "  | Back           B or <Esc>     | Info/Settings   i       |\n"
+        "  | Home           H              | Rewind          r       |\n"
+        "  | Left           h or <Left>    | Fast-Fwd        f       |\n"
+        "  | Down           j or <Down>    | Play/Pause      <Space> |\n"
+        "  | Up             k or <Up>      | Enter Text      /       |\n"
+        "  | Right          l or <Right>   | Volume Up       V       |\n"
+        "  | Ok/Enter       <Enter>        | Volume Down     v       |\n"
         "  |                               | Volume Mute     M       |\n"
         "  +-------------------------------+-------------------------+\n"
         "   (press q to exit)\n")
@@ -119,6 +119,7 @@ class RokuCLI():
             print(default_usage_menu)
 
         cmd_func_map = {
+            'p':          self.roku.power,
             'B':          self.roku.back,
             'KEY_ESCAPE': self.roku.back,
             'H':          self.roku.home,
