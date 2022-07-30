@@ -80,13 +80,14 @@ From there, you'll be in interactive mode, and you can input keys to control
 your Roku::
 
     +-------------------------------+-------------------------+
-    | Back           B or <Backsp>  | Replay          R       |
-    | Home           H              | Info/Settings   i       |
-    | Left           h or <Left>    | Rewind          r       |
-    | Down           j or <Down>    | Fast-Fwd        f       |
-    | Up             k or <Up>      | Play/Pause      <Space> |
-    | Right          l or <Right>   | Enter Text      /       |
-    | Ok/Enter       <Enter>        |                         |
+    | Power          p              | Replay          R       |
+    | Back           B or <Esc>     | Info/Settings   i       |
+    | Home           H              | Rewind          r       |
+    | Left           h or <Left>    | Fast-Fwd        f       |
+    | Down           j or <Down>    | Play/Pause      <Space> |
+    | Up             k or <Up>      | Enter Text      /       |
+    | Right          l or <Right>   | Volume Up       V       |
+    | Ok/Enter       <Enter>        | Volume Down     v       |
+    |                               | Volume Mute     M       |
     +-------------------------------+-------------------------+
     (press q to exit)
-
